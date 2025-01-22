@@ -26,29 +26,8 @@ function init() {
 
     geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
 
-    // Create a circular texture for particles
-    const canvas = document.createElement('canvas');
-    canvas.width = 64;
-    canvas.height = 64;
-
-    const ctx = canvas.getContext('2d');
-    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    gradient.addColorStop(0.2, 'rgba(255, 255, 255, 0.5)');
-    gradient.addColorStop(0.4, 'rgba(255, 255, 255, 0.3)');
-    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
-
-    ctx.beginPath();
-    ctx.arc(32, 32, 32, 0, Math.PI * 2);
-    ctx.fillStyle = gradient;
-    ctx.fill();
-
-    const texture = new THREE.CanvasTexture(canvas);
-
     material = new THREE.PointsMaterial({
-        size: 10, // Adjust the size of the particles
-        map: texture,
-        transparent: true,
+        size: 2,
         color: 0xffffff,
     });
 
@@ -94,3 +73,5 @@ function render() {
 
     renderer.render(scene, camera);
 }
+the box that are appears as a star are square type
+can you make it like a circle shape?
