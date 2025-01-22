@@ -73,5 +73,3 @@ function render() {
 
     renderer.render(scene, camera);
 }
-the box that are appears as a star are square type
-can you make it like a circle shape?
